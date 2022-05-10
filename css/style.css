@@ -16,7 +16,7 @@
 
 #container {
     display: flex;
-    height: max(100vh, 600px);
+    min-height: max(100vh, 600px);
 }
 
 #hero-container {
