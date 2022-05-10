@@ -16,10 +16,10 @@
 
 #container {
     display: flex;
+    height: 100vh;
 }
 
 #hero-container {
-    height: 100vh;
     position: relative;
 }
 
