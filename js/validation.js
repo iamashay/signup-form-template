@@ -6,20 +6,18 @@ const confirmPwd = document.querySelector("#confirm-pass");
 function passValidate(){
     
     if (pwd.value.length < 4) {
-        pwd.setCustomValidity("Password must be greater than 4 characters");
+        pwd.setCustomValidity("Password must be greater than 3 characters");
+        pwdResult.innerText = "";
         pwd.reportValidity();
         return;
     }
 
     if (pwd.value === confirmPwd.value){
-        pwd.classList.remove("error");
-        confirmPwd.classList.remove("error");
         pwd.setCustomValidity("");
         confirmPwd.setCustomValidity("");
         pwdResult.innerText = "";
     }else {
-        pwd.classList.add("error");
-        confirmPwd.classList.add("error");
+
         pwdResult.innerText = "Password not matched!";
         pwd.setCustomValidity(" ");
         confirmPwd.setCustomValidity(" ");
@@ -28,5 +26,5 @@ function passValidate(){
 
 }
 
-pwd.addEventListener("keydown", passValidate);
-confirmPwd.addEventListener("keydown", passValidate);
+pwd.addEventListener("keyup", passValidate);
+confirmPwd.addEventListener("keyup", passValidate);
